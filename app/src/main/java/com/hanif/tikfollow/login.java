@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.Collections;
 import java.util.Objects;
 
 public class login extends AppCompatActivity {
@@ -27,7 +29,7 @@ public class login extends AppCompatActivity {
         done.setOnClickListener(v -> {
             String inputs = text.getText().toString();
             if(inputs.isEmpty()){
-                autoLoad.alart(login.this, "Please enter your Username");
+                autoLoad.alart(login.this, "Please enter your TikTok Username");
             }else{
                 if (Objects.equals(check, "true")) {
                     autoLoad.removedata(autoLoad.userName);
@@ -36,9 +38,7 @@ public class login extends AppCompatActivity {
                     autoLoad.savedata(inputs);
                     save(inputs);
                 }else {
-                    inputs= "@"+inputs;
-                    autoLoad.savedata(inputs);
-                    save(inputs);
+                    autoLoad.alart(login.this, "Username not correct. Please put @ ");
                 }
 
             }

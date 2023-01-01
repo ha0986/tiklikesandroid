@@ -31,7 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Objects;
+
 
 
 
@@ -189,7 +189,8 @@ public class autoLoad {
                 dict = dict.replace("{", "");
                 dict = dict.replace("}", "");
                 String[] list = dict.split(",");
-                if (!Objects.equals(followed, "")) {
+                Log.d("len", String.valueOf(followed.length()));
+                if (followed.length()>3) {
                     String[] foll = followed.split(",");
                     follow.addAll(Arrays.asList(foll));
                 }
