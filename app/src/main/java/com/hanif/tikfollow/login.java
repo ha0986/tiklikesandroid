@@ -38,6 +38,7 @@ public class login extends AppCompatActivity {
                     autoLoad.savedata(inputs);
                     save(inputs);
                 }else {
+                    
                     autoLoad.alart(login.this, "Username not correct. Please put @ ");
                 }
 
