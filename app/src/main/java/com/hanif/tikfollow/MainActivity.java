@@ -9,13 +9,12 @@ import android.os.Handler;
 
 import java.util.Objects;
 
-public class splash extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-
+        setContentView(R.layout.activity_main);
         move();
         autoLoad.loadAdd(this);
     }
@@ -27,16 +26,17 @@ public class splash extends AppCompatActivity {
             String username = pref.getString("name", "");
             autoLoad.followed = pref.getString("done", "");
             if (Objects.equals(username, "")){
-                Intent myIntent = new Intent(splash.this, login.class);
+                Intent myIntent = new Intent(MainActivity.this, login.class);
                 startActivity(myIntent);
             }else {
 
                 autoLoad.userName = username;
                 autoLoad.getdata();
-                Intent myIntent = new Intent(splash.this, doTask.class);
+                Intent myIntent = new Intent(MainActivity.this, doTask.class);
                 startActivity(myIntent);
             }
         }, 4000);
     }
+
 
 }
