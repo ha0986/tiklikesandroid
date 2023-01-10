@@ -171,8 +171,14 @@ public class autoLoad {
                 Log.e("firebase", "Error getting data", task.getException());
             } else {
                 points = String.valueOf(task.getResult().getValue());
-                doTask.userpoints.setText(points);
-                doTask.plusPoints = Integer.valueOf(points);
+                Log.d("points", String.valueOf(points.trim().length()));
+                Log.d("points",points);
+                if(points.trim().contains("l")){
+                    points= "500";
+                    Log.d("points", String.valueOf(points.trim().length()));
+                }
+ /*               doTask.userpoints.setText(points);
+                doTask.plusPoints = Integer.valueOf(points);*/
             }
         });
     }

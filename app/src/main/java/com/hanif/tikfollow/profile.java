@@ -86,17 +86,17 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void exit(){
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(profile.this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Tikfollow")
                 .setMessage("Are you sure you want to close this activity?")
-                .setPositiveButton("Yes", (dialog, which) -> finish() )
+                .setPositiveButton("Yes", (dialog, which) ->{moveTaskToBack(true); finish();} )
                 .setNegativeButton("No", null)
                 .show();
     }
 
     public void onBackPressed() {
-
+        exit();
     }
 
 

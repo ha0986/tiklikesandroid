@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         move();
         autoLoad.loadAdd(this);
     }
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(MainActivity.this, doTask.class);
                 startActivity(myIntent);
             }
-        }, 4000);
+        }, 1000);
     }
 
 

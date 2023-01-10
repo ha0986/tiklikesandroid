@@ -29,7 +29,6 @@ import java.util.Arrays;
 
 public class doTask extends AppCompatActivity implements View.OnClickListener {
     public Intent myIntent;
-    private AdView mAdView;
     public static TextView userpoints;
     public String minusUser;
     public Integer minusPoint=500;
@@ -48,7 +47,6 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         Button back = findViewById(R.id.back);
         Button jokes = findViewById(R.id.jokes);
         Button follow = findViewById(R.id.follow);
- //       Button bonus = findViewById(R.id.bonusbtn);
         userpoints = findViewById(R.id.taskpoint);
 
 
@@ -66,7 +64,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
  //       autoLoad.loadInter(this);
   //      autoLoad.loadReward(this,"ca-app-pub-9422110628550448/4398078885");
 
-        mAdView = findViewById(R.id.adView);
+        AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
