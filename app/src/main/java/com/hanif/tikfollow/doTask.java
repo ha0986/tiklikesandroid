@@ -48,7 +48,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         Button back = findViewById(R.id.back);
         Button jokes = findViewById(R.id.jokes);
         Button follow = findViewById(R.id.follow);
-        Button bonus = findViewById(R.id.bonusbtn);
+ //       Button bonus = findViewById(R.id.bonusbtn);
         userpoints = findViewById(R.id.taskpoint);
 
 
@@ -57,15 +57,14 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         back.setOnClickListener(this);
         jokes.setOnClickListener(this);
         follow.setOnClickListener(this);
-        bonus.setOnClickListener(this);
+  //      bonus.setOnClickListener(this);
 
 
 
         autoLoad.getDatas();
         autoLoad.checkNetwork(this);
-        autoLoad.loadInter(this);
-        autoLoad.loadReward(this,"ca-app-pub-9422110628550448/4398078885");
-        autoLoad.loadBanner(doTask.this,"top");
+ //       autoLoad.loadInter(this);
+  //      autoLoad.loadReward(this,"ca-app-pub-9422110628550448/4398078885");
 
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -87,10 +86,10 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
                 myIntent = new Intent(doTask.this, jokes.class);
                 startActivity(myIntent);
                 break;
-            case  R.id.bonusbtn:
+ /*           case  R.id.bonusbtn:
                 myIntent = new Intent(doTask.this, bonus.class);
                 startActivity(myIntent);
-                break;
+                break;*/
             case R.id.back:
                 myIntent = new Intent(doTask.this, profile.class);
                 startActivity(myIntent);

@@ -29,8 +29,8 @@ public class jokes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jokes);
 
-        autoLoad.loadInter(this);
-        autoLoad.loadBanner(this,"top");
+//        autoLoad.loadInter(this);
+ //       autoLoad.loadBanner(this,"top");
         jokes = findViewById(R.id.textView2);
 
         Button next = findViewById(R.id.next);

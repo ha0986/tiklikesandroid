@@ -74,12 +74,13 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="334dp"
-        android:layout_height="286dp"
+        android:layout_width="312dp"
+        android:layout_height="278dp"
+        android:gravity="center_horizontal|center_vertical"
         android:text="@string/textview"
-        android:textAlignment="center"
+        android:textAlignment="gravity"
         android:textColor="#007F00"
-        android:textSize="25sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
