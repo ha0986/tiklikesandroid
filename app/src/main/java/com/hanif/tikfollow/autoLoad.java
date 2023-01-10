@@ -1,7 +1,6 @@
 package com.hanif.tikfollow;
 
 
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -11,6 +10,7 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
@@ -33,8 +33,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-
-
 public class autoLoad {
     public static String userName = "@hanif";
     private static RewardedAd mRewardedAd;
@@ -45,7 +43,6 @@ public class autoLoad {
     public static ArrayList<String> nameList = new ArrayList<>();
     public static ArrayList<String> follow = new ArrayList<>();
     public static String followed;
-
 
 
     // splash screen theke purbe kader follow kora hoiche oi id gula "followed" variable a
@@ -171,14 +168,11 @@ public class autoLoad {
                 Log.e("firebase", "Error getting data", task.getException());
             } else {
                 points = String.valueOf(task.getResult().getValue());
-                Log.d("points", String.valueOf(points.trim().length()));
-                Log.d("points",points);
-                if(points.trim().contains("l")){
-                    points= "500";
-                    Log.d("points", String.valueOf(points.trim().length()));
+                if (points == null || points.equals("null")) {
+                    points = "500";
                 }
- /*               doTask.userpoints.setText(points);
-                doTask.plusPoints = Integer.valueOf(points);*/
+                doTask.userpoints.setText(points);
+                doTask.plusPoints = Integer.valueOf(points);
             }
         });
     }
@@ -196,7 +190,7 @@ public class autoLoad {
                 dict = dict.replace("}", "");
                 String[] list = dict.split(",");
 
-                if (followed.length()>3) {
+                if (followed.length() > 3) {
                     String[] foll = followed.split(",");
                     follow.addAll(Arrays.asList(foll));
                 }

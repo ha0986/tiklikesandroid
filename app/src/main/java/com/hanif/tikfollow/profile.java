@@ -44,7 +44,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         username.setText(autoLoad.userName);
         points.setText(autoLoad.points);
 
-        autoLoad.loadReward(this,"ca-app-pub-9422110628550448/3388878497");
+        autoLoad.loadReward(this, "ca-app-pub-9422110628550448/3388878497");
 
     }
 
@@ -52,7 +52,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
 
             case R.id.rate:
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.hanif.tikfollow"));
@@ -60,7 +60,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.edit:
                 Intent i = new Intent(profile.this, login.class);
-                i.putExtra("change","true");
+                i.putExtra("change", "true");
                 startActivity(i);
                 break;
             case R.id.task:
@@ -74,7 +74,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
                 exit();
                 break;
             case R.id.bonus:
-                myIntent = new Intent(profile.this,bonus.class);
+                myIntent = new Intent(profile.this, bonus.class);
                 startActivity(myIntent);
                 break;
             case R.id.more:
@@ -85,12 +85,15 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
 
     }
 
-    public void exit(){
+    public void exit() {
         new AlertDialog.Builder(profile.this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Tikfollow")
                 .setMessage("Are you sure you want to close this activity?")
-                .setPositiveButton("Yes", (dialog, which) ->{moveTaskToBack(true); finish();} )
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    moveTaskToBack(true);
+                    finish();
+                })
                 .setNegativeButton("No", null)
                 .show();
     }
@@ -98,8 +101,6 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
     public void onBackPressed() {
         exit();
     }
-
-
 
 
 }

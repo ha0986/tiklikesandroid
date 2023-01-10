@@ -37,15 +37,10 @@ public class more extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-
-
-
-
-
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
 
             case R.id.gdelete:
                 openUrl("https://play.google.com/store/apps/details?id=com.hanif.gdele");
@@ -80,9 +75,7 @@ public class more extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-
-
-    public void openUrl(String url){
+    public void openUrl(String url) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(browserIntent);
     }

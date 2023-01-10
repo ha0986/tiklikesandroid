@@ -27,7 +27,7 @@ import java.util.Objects;
 public class bonus extends AppCompatActivity implements View.OnClickListener {
     public static String tag;
     public String claimedDate;
-    public  Integer next;
+    public Integer next;
     public String date;
     public Button claimedButton;
     private AdView mAdView;
@@ -58,7 +58,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
         getDatas();
         autoLoad.loadInter(this);
-        autoLoad.loadReward(this,"ca-app-pub-9422110628550448/1593892548");
+        autoLoad.loadReward(this, "ca-app-pub-9422110628550448/1593892548");
 
 
         mAdView = findViewById(R.id.adView);
@@ -72,7 +72,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
 
             case R.id.button1:
                 tag = "1";
@@ -105,13 +105,13 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
 
     @SuppressLint({"ResourceAsColor", "SetTextI18n"})
-    public void getDatas(){
+    public void getDatas() {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         next = Integer.valueOf(pref.getString("next", "1"));
-        claimedDate= pref.getString("date", "1");
+        claimedDate = pref.getString("date", "1");
         Log.d("next", String.valueOf(next));
 
-         int[] BUTTON_IDS = {
+        int[] BUTTON_IDS = {
                 R.id.button1,
                 R.id.button2,
                 R.id.button3,
@@ -121,47 +121,42 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
                 R.id.button7,
         };
 
-         for(int i=0; i<next;i++){
+        for (int i = 0; i < next; i++) {
             Button button = findViewById(BUTTON_IDS[i]);
             button.setText("Claimed");
             button.setBackgroundColor(R.color.teal_200);
-         }
+        }
     }
 
 
-
-
-
-    public void check(){
+    public void check() {
         date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
-        if(String.valueOf(next).equals("1") & Objects.equals(tag, "1")){
+        if (String.valueOf(next).equals("1") & Objects.equals(tag, "1")) {
             loadAdd();
-        }else if(String.valueOf(next).equals("1") & !Objects.equals(tag, "1")){
+        } else if (String.valueOf(next).equals("1") & !Objects.equals(tag, "1")) {
             autoLoad.alart(this, "Click on first Item to get the offer");
-        }else if(Objects.equals(date, claimedDate)){
+        } else if (Objects.equals(date, claimedDate)) {
             autoLoad.alart(this, "You have already Claimed This offer");
-        }else if(!Objects.equals(date, claimedDate) & Objects.equals(tag, String.valueOf(next))){
+        } else if (!Objects.equals(date, claimedDate) & Objects.equals(tag, String.valueOf(next))) {
             loadAdd();
         }
 
     }
 
-    public void loadAdd(){
+    public void loadAdd() {
         new android.app.AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Tikfollow")
                 .setMessage("Watch add to claim this offer")
-                .setPositiveButton("OK", (dialog, which) ->claim())
+                .setPositiveButton("OK", (dialog, which) -> claim())
                 .setNegativeButton("No", null)
                 .show();
 
     }
 
 
-
-
     @SuppressLint({"SetTextI18n", "ResourceAsColor"})
-    public void claim(){
+    public void claim() {
         autoLoad.showReward(this);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Days");
@@ -170,7 +165,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         SharedPreferences.Editor editor = pref.edit();
-        next = Integer.parseInt(tag)+1;
+        next = Integer.parseInt(tag) + 1;
 
         editor.putString("date", date);
         editor.putString("next", String.valueOf(next));
