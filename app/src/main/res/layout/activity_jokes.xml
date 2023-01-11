@@ -67,10 +67,10 @@
         app:adUnitId="ca-app-pub-9422110628550448/8550539984"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.201" />
+        app:layout_constraintVertical_bias="0.207" />
 
     <TextView
         android:id="@+id/textView2"
@@ -79,7 +79,7 @@
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/textview"
         android:textAlignment="gravity"
-        android:textColor="#007F00"
+        android:textColor="@color/purple_500"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
