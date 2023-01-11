@@ -57,7 +57,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
         getDatas();
         autoLoad.loadInter(this);
-        autoLoad.loadReward(this, "ca-app-pub-9422110628550448/1593892548");
+        autoLoad.loadReward(this, "ca-app-pub-9422110628550448/3578733498");
 
 
         AdView mAdView = findViewById(R.id.adView);

@@ -83,7 +83,7 @@ public class autoLoad {
         layout.setGravity(Gravity.TOP);
         AdView adView = new AdView(context);
         adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-9422110628550448/8550539984");
+        adView.setAdUnitId("ca-app-pub-9422110628550448/4272267052");
         AdRequest.Builder adRequestBuilder = new AdRequest.Builder();
         layout.addView(adView);
         adView.loadAd(adRequestBuilder.build());
@@ -99,7 +99,7 @@ public class autoLoad {
 
         AdRequest loadInter = new AdRequest.Builder().build();
 
-        InterstitialAd.load(context, "ca-app-pub-9422110628550448/7543745921", loadInter,
+        InterstitialAd.load(context, "ca-app-pub-9422110628550448/6842590072", loadInter,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
