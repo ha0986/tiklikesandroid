@@ -5,7 +5,7 @@
     android:id="@+id/relativeLayout7"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D6F3E2"
+    android:background="#FED4E4"
     android:textAlignment="center"
     tools:context=".login">
 
@@ -22,13 +22,14 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/box" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/enter_your_tiktok_username"
         android:textAlignment="center"
-        android:textColor="#037C71"
+        android:textColor="#E91E63"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,19 +55,20 @@
             android:id="@+id/editTextTextPersonName3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/type_here"
             android:inputType="textPersonName"
-            android:textAlignment="center"
-            android:autofillHints="" />
+            android:textAlignment="center" />
     </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FED4E4"
         android:text="@string/done"
-        android:textColor="#000000"
+        android:textColor="#E91E63"
         android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="90dp"
@@ -81,11 +83,12 @@
         android:id="@+id/gp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FED4E4"
         android:text="@string/continue_as_guest"
-        android:textColor="#000000"
+        android:textColor="#9C27B0"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:cornerRadius="5dp"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

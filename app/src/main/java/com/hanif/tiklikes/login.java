@@ -1,15 +1,13 @@
-package com.hanif.tikfollow;
+package com.hanif.tiklikes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.util.Collections;
 import java.util.Objects;
 
 public class login extends AppCompatActivity {

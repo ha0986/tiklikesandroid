@@ -1,4 +1,4 @@
-package com.hanif.tikfollow;
+package com.hanif.tiklikes;
 
 
 import android.annotation.SuppressLint;
@@ -57,7 +57,7 @@ public class autoLoad {
 
     public static void alart(Context context, String text) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Tikfollow");
+        builder.setTitle("TikLikes");
         builder.setMessage(text);
         AlertDialog alert = builder.create();
         alert.show();

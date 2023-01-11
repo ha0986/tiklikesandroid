@@ -5,6 +5,7 @@
     android:id="@+id/relativeLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FED4E4"
     tools:context=".jokes">
 
     <ImageView

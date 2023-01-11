@@ -1,4 +1,4 @@
-package com.hanif.tikfollow;
+package com.hanif.tiklikes;
 
 import android.content.Context;
 

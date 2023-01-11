@@ -1,4 +1,4 @@
-package com.hanif.tikfollow;
+package com.hanif.tiklikes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -88,7 +88,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
     public void exit() {
         new AlertDialog.Builder(profile.this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Tikfollow")
+                .setTitle("TikLikes")
                 .setMessage("Are you sure you want to close this activity?")
                 .setPositiveButton("Yes", (dialog, which) -> {
                     moveTaskToBack(true);

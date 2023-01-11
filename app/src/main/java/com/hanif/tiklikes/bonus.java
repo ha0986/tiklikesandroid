@@ -1,4 +1,4 @@
-package com.hanif.tikfollow;
+package com.hanif.tiklikes;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,7 +7,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -151,7 +150,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     public void loadAdd() {
         new android.app.AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Tikfollow")
+                .setTitle("TikLikes")
                 .setMessage("Watch add to claim this offer")
                 .setPositiveButton("OK", (dialog, which) -> claim())
                 .setNegativeButton("No", null)
@@ -179,7 +178,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Tikfollow");
+        builder.setTitle("TikLikes");
         builder.setMessage("You will get your offer within a day. Please keep patience");
         AlertDialog alert = builder.create();
         alert.show();
