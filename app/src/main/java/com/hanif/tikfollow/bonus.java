@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -28,6 +30,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     public Integer next;
     public String date;
     public Button claimedButton;
+    public String btnText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +58,12 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
         getDatas();
         autoLoad.loadInter(this);
-//        autoLoad.loadReward(this, "ca-app-pub-9422110628550448/1593892548");
+        autoLoad.loadReward(this, "ca-app-pub-9422110628550448/1593892548");
 
 
-
+        AdView mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
     }
 
@@ -70,31 +75,39 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
             case R.id.button1:
                 tag = "1";
+                claimedButton = findViewById(R.id.button1);
                 break;
             case R.id.button2:
                 tag = "2";
+                claimedButton = findViewById(R.id.button2);
                 break;
             case R.id.button3:
                 tag = "3";
+                claimedButton = findViewById(R.id.button3);
                 break;
             case R.id.button4:
                 tag = "4";
+                claimedButton = findViewById(R.id.button4);
                 break;
             case R.id.button5:
                 tag = "5";
+                claimedButton = findViewById(R.id.button5);
                 break;
             case R.id.button6:
                 tag = "6";
+                claimedButton = findViewById(R.id.button6);
                 break;
             case R.id.button7:
                 tag = "7";
+                claimedButton = findViewById(R.id.button7);
                 break;
             case R.id.button8:
                 tag = "8";
+                claimedButton = findViewById(R.id.button8);
                 break;
         }
+        btnText = (String) claimedButton.getText();
         check();
-        claimedButton = findViewById(v.getId());
     }
 
 
@@ -103,7 +116,6 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         next = Integer.valueOf(pref.getString("next", "1"));
         claimedDate = pref.getString("date", "1");
-        Log.d("next", String.valueOf(next));
 
         int[] BUTTON_IDS = {
                 R.id.button1,
@@ -114,7 +126,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
                 R.id.button6,
                 R.id.button7,
         };
-        for (int i = 0; i < next; i++) {
+        for (int i = 0; i < next - 1; i++) {
             Button button = findViewById(BUTTON_IDS[i]);
             button.setText("Claimed");
             button.setBackgroundColor(R.color.teal_200);
@@ -126,13 +138,11 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
     public void check() {
         date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
-        if (String.valueOf(next).equals("1") & Objects.equals(tag, "1")) {
-            loadAdd();
-        } else if (String.valueOf(next).equals("1") & !Objects.equals(tag, "1")) {
-            autoLoad.alart(this, "Click on first Item to get the offer");
-        } else if (Objects.equals(date, claimedDate)) {
+        if (Objects.equals(btnText, "Claimed")) {
             autoLoad.alart(this, "You have already Claimed This offer");
-        } else if (!Objects.equals(date, claimedDate) & Objects.equals(tag, String.valueOf(next))) {
+        } else if (Objects.equals(btnText, "Claim") && (!Objects.equals(tag, next.toString()))) {
+            autoLoad.alart(this, "You are not able to claim this offer");
+        } else if (Objects.equals(btnText, "Claim") && Objects.equals(tag, next.toString()) && !Objects.equals(claimedDate, date)) {
             loadAdd();
         }
 

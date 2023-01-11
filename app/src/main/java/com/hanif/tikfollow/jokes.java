@@ -14,6 +14,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,15 +32,16 @@ public class jokes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jokes);
 
-//        autoLoad.loadInter(this);
-        //       autoLoad.loadBanner(this,"top");
+        autoLoad.loadInter(this);
         jokes = findViewById(R.id.textView2);
 
         Button next = findViewById(R.id.next);
         Button prev = findViewById(R.id.prev);
         Button copy = findViewById(R.id.Copy);
 
-
+        AdView mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         getJokes();
 
 

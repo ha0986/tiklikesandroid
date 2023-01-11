@@ -61,8 +61,8 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
 
         autoLoad.getDatas();
         autoLoad.checkNetwork(this);
-        //autoLoad.loadInter(this);
-        //autoLoad.loadReward(this,"ca-app-pub-9422110628550448/4398078885");
+        autoLoad.loadInter(this);
+        autoLoad.loadReward(this,"ca-app-pub-9422110628550448/4398078885");
 
         AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
