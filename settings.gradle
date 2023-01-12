@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "tikfollow"
+rootProject.name = "Tiklikes"
 include ':app'
