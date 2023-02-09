@@ -53,6 +53,8 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         Button jokes = findViewById(R.id.jokes);
         Button follow = findViewById(R.id.follow);
         Button bonus = findViewById(R.id.bonuses);
+        Button rates = findViewById(R.id.Rates);
+        Button prove = findViewById(R.id.proves);
         userpoints = findViewById(R.id.taskpoint);
 
 
@@ -62,6 +64,8 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         jokes.setOnClickListener(this);
         follow.setOnClickListener(this);
         bonus.setOnClickListener(this);
+        rates.setOnClickListener(this);
+        prove.setOnClickListener(this);
 
 
         autoLoad.getDatas();
@@ -100,6 +104,14 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
             case R.id.follow:
                 startTask();
                 click += 1;
+                break;
+            case R.id.Rates:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.hanif.tiklikes"));
+                startActivity(browserIntent);
+                break;
+            case R.id.proves:
+                myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=OyQa_sio2Vg&list=PLHYlI7uONfH3853Ra1Fi0UeXPezwtN6nL"));
+                startActivity(myIntent);
                 break;
         }
     }
@@ -178,7 +190,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
 
     public void loadReward() {
         AdRequest adRequest = new AdRequest.Builder().build();
-        RewardedAd.load(doTask.this, "ca-app-pub-9422110628550448/4398078885",
+        RewardedAd.load(doTask.this, "ca-app-pub-9422110628550448/7998729770",
                 adRequest, new RewardedAdLoadCallback() {
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {

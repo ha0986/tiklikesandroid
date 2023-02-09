@@ -22,6 +22,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+
         Button rate = findViewById(R.id.rate);
         Button edit = findViewById(R.id.edit);
         Button task = findViewById(R.id.task);

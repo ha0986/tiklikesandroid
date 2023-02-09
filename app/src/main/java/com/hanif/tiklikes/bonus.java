@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
@@ -50,6 +51,8 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         Button button6 = findViewById(R.id.button6);
         Button button7 = findViewById(R.id.button7);
         Button button8 = findViewById(R.id.button8);
+        Button back = findViewById(R.id.backs);
+        Button change = findViewById(R.id.change);
 
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -110,6 +113,12 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
                 tag = "8";
                 claimedButton = findViewById(R.id.button8);
                 break;
+            case R.id.change:
+                changeScene();
+                break;
+            case R.id.backs:
+                changeScene();
+                break;
         }
         btnText = (String) claimedButton.getText();
         check();
@@ -145,8 +154,10 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
         if (Objects.equals(btnText, "Claimed")) {
             autoLoad.alart(this, "You have already Claimed This offer");
+            autoLoad.showInter(this);
         } else if (Objects.equals(btnText, "Claim") && (!Objects.equals(tag, next.toString()))) {
             autoLoad.alart(this, "You are not able to claim this offer");
+            autoLoad.showInter(this);
         } else if (Objects.equals(btnText, "Claim") && Objects.equals(tag, next.toString()) && !Objects.equals(claimedDate, date)) {
             loadAdd();
         }
@@ -197,9 +208,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
 
     public void onBackPressed() {
-        autoLoad.showInter(this);
-        Intent myIntent = new Intent(bonus.this, doTask.class);
-        startActivity(myIntent);
+        changeScene();
     }
 
 
@@ -230,6 +239,15 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         } else {
             loadReward();
         }
+    }
+
+
+    public void changeScene(){
+        new Handler().postDelayed(() -> {
+            Intent mainIntent = new Intent(bonus.this, doTask.class);
+            startActivity(mainIntent);
+            bonus.this.finish();
+        }, 5000);
     }
 
 }
